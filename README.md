@@ -7,7 +7,7 @@ It highlights my technical skills, projects, and experience — with beautiful a
 
 ## 🚀 Live Demo
 
-🔗 **[View Portfolio](https://your-portfolio-link.com)**  
+🔗 **[View Portfolio](https://harsh-koundal.onrender.com/)**  
 
 ---
 
