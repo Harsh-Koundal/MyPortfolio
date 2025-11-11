@@ -21,7 +21,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden px-12">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar scrolled={scrolled} />
       <Hero />
       <About />
