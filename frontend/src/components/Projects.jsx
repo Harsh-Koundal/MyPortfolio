@@ -11,7 +11,7 @@ const projects = [
       "A smart learning platform where users can upload, organize, and share educational materials securely. Includes real-time document previews, category filters, and user profiles.",
     image:
       "https://images.unsplash.com/photo-1581090700227-1e37b190418e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS" , "Three.js"],
     github: "https://github.com/Harsh-Koundal/studyvault",
     demo: "https://studyvault-2.onrender.com/",
   },
@@ -22,7 +22,7 @@ const projects = [
       "A modern website for a digital agency showcasing services, portfolio, team members, and client testimonials with smooth animations and responsive design.",
     image:
       "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
-    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express"],
+    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express" , "Three.js"],
     github: "https://github.com/Harsh-Koundal",
     demo: "https://nerathix.onrender.com/",
   },
@@ -45,7 +45,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     tech: ["React", "API Integration", "CSS3", "JavaScript"],
-    github: "https://github.com/Harsh-Koundal/recipe-finder",
+    github: "https://github.com/Harsh-Koundal/-Recipe-App",
     demo: "#",
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174",
     tech: ["React", "Chart.js", "Local Storage", "CSS Modules"],
-    github: "https://github.com/Harsh-Koundal/expense-tracker",
+    github: "https://github.com/Harsh-Koundal/-Expense-Tracker",
     demo: "#",
   },
 ];
