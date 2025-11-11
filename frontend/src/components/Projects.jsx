@@ -11,41 +11,52 @@ const projects = [
       "A smart learning platform where users can upload, organize, and share educational materials securely. Includes real-time document previews, category filters, and user profiles.",
     image:
       "https://images.unsplash.com/photo-1581090700227-1e37b190418e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tech: ["React", "Node.js", "MongoDB", "Express" , "Tailwind CSS"],
-    github: "https://github.com/yourusername/studyvault",
-    demo: "#",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    github: "https://github.com/Harsh-Koundal/studyvault",
+    demo: "https://studyvault-2.onrender.com/",
   },
   {
     id: 2,
+    title: "NerathiX digital agency",
+    description:
+      "A modern website for a digital agency showcasing services, portfolio, team members, and client testimonials with smooth animations and responsive design.",
+    image:
+      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express"],
+    github: "https://github.com/Harsh-Koundal",
+    demo: "https://nerathix.onrender.com/",
+  },
+  {
+    id: 3,
     title: "Voting System",
     description:
       "A secure online voting platform allowing users to cast votes, view live results, and prevent duplicate submissions using authentication and database validation.",
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB" , "Express"],
-    github: "https://github.com/yourusername/voting-system",
+    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express"],
+    github: "https://github.com/Harsh-Koundal/voting-system",
     demo: "#",
   },
   {
-    id: 3,
+    id: 4,
     title: "Recipe Finder",
     description:
       "A web app that helps users discover recipes based on ingredients they have. Includes API integration, filtering by cuisine, and responsive card-based design.",
     image:
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     tech: ["React", "API Integration", "CSS3", "JavaScript"],
-    github: "https://github.com/yourusername/recipe-finder",
+    github: "https://github.com/Harsh-Koundal/recipe-finder",
     demo: "#",
   },
   {
-    id: 4,
+    id: 5,
     title: "Expense Tracker",
     description:
       "A smart budgeting tool that tracks daily expenses, visualizes spending trends, and helps manage finances efficiently with local storage support.",
     image:
       "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174",
     tech: ["React", "Chart.js", "Local Storage", "CSS Modules"],
-    github: "https://github.com/yourusername/expense-tracker",
+    github: "https://github.com/Harsh-Koundal/expense-tracker",
     demo: "#",
   },
 ];
@@ -124,20 +135,26 @@ export default function Projects() {
                       className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <Github size={20} />
                       Code
                     </motion.a>
+
                     <motion.a
                       href={project.demo}
                       className="flex items-center gap-2 text-gray-400 hover:text-pink-400 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <ExternalLink size={20} />
                       Live Demo
                     </motion.a>
                   </div>
+
                 </div>
 
                 {/* Hover Border */}

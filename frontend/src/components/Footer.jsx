@@ -84,7 +84,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="mb-4 text-purple-300">Get In Touch</h4>
-            <p className="text-gray-400 mb-2">harsh@example.com</p>
+            <p className="text-gray-400 mb-2">aharsh3039@gmail.com</p>
             <p className="text-gray-400">Available for freelance work</p>
           </motion.div>
         </div>

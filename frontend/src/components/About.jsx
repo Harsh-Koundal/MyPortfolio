@@ -34,8 +34,8 @@ export default function About() {
     <section id="about" className="min-h-screen py-20 relative">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
-      
-      <div className="container mx-auto px-6 relative z-10">
+
+      <div className="container mx-auto px-6 relative z-10 flex flex-col flex-grow">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,15 +76,19 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I'm <span className="text-purple-400">Harsh Koundal</span>, also known as{' '}
-              <span className="text-pink-400">CodeRage Harsh</span> — a passionate Full Stack MERN Developer
-              who loves building innovative web applications that make a difference.
+              I'm <span className="text-purple-400 font-semibold">Harsh Koundal</span>, a dedicated
+              <span className="text-pink-400 font-semibold"> Full Stack MERN Developer</span> driven by the passion
+              to craft meaningful and impactful web experiences. I love turning complex ideas into smooth,
+              intuitive, and high-performing digital products.
             </p>
+
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              My mission is to create seamless, user-centric digital experiences that combine
-              cutting-edge technology with creative design. I specialize in the MERN stack and have
-              a keen eye for modern UI/UX trends and 3D web experiences.
+              My goal is to build modern, user-focused applications that seamlessly blend powerful
+              functionality with elegant design. I specialize in the MERN stack and enjoy experimenting
+              with cutting-edge technologies like animations, 3D interfaces, and creative UI/UX concepts
+              that make the web feel alive.
             </p>
+
 
             {/* Skills */}
             <div className="space-y-4">
