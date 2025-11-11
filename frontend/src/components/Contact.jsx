@@ -25,15 +25,15 @@ export default function Contact() {
     e.preventDefault();
     emailjs
       .send(
-        'service_edx24ps',
-        'template_hcdrk8n',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
           reply_to: formData.email, 
           message: formData.message,
         },
-        '9IO7DpD2GUK1K2Aua'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
