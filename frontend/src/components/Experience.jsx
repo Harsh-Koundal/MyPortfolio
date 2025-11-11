@@ -36,7 +36,7 @@ const technologies = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="min-h-screen py-20 relative">
+    <section id="experience" className="min-h-screen py-20 relative px-12">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
       
       <div className="container mx-auto px-6 relative z-10">
