@@ -4,6 +4,7 @@ import { OrbitControls, Torus } from '@react-three/drei';
 import { Suspense, useState } from 'react';
 import { Send, Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 
 function AnimatedTorus() {
   return (
@@ -22,10 +23,26 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // ✅ Replace this with EmailJS, SendGrid, or your backend later
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    emailjs
+      .send(
+        'service_edx24ps',
+        'template_hcdrk8n',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          reply_to: formData.email, 
+          message: formData.message,
+        },
+        '9IO7DpD2GUK1K2Aua'
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully! I'll get back to you soon.",result);
+        },
+        (error) => {
+          toast.error('There was an error sending the email:',error);
+        }
+      );
   };
 
   const handleChange = (e) => {
@@ -36,10 +53,10 @@ export default function Contact() {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:harsh@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/Harsh-Koundal', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/harsh-koundal-0a7485369/', label: 'LinkedIn' },
+    { icon: Twitter, href: ' https://x.com/aharsh3039?t=2tJUiFwsF8fGifYLSFkZVg&s=08 ', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:aharsh3039@gmail.com', label: 'Email' },
   ];
 
   return (

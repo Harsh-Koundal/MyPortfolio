@@ -1,13 +1,20 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Server, Palette, Sparkles, Globe } from 'lucide-react';
+import { Code2, Database, Server, Palette, Sparkles, Globe, Cuboid } from 'lucide-react';
 
 const experiences = [
   {
-    year: '2024',
+    year: '2025',
     title: 'Full Stack MERN Developer',
     company: 'Freelance',
     description: 'Building modern web applications with React, Node.js, and MongoDB. Focus on creating responsive, performant, and user-friendly experiences.',
     icon: Code2,
+  },
+  {
+    year: '2024',
+    title: 'Backend Developer',
+    company: 'Digital Agency',
+    description: 'Created RESTful APIs, managed databases, and implemented authentication systems using Node.js and Express.',
+    icon: Server,
   },
   {
     year: '2023',
@@ -16,13 +23,7 @@ const experiences = [
     description: 'Developed interactive UIs using React and implemented complex animations with Three.js and Framer Motion.',
     icon: Palette,
   },
-  {
-    year: '2022',
-    title: 'Backend Developer',
-    company: 'Digital Agency',
-    description: 'Created RESTful APIs, managed databases, and implemented authentication systems using Node.js and Express.',
-    icon: Server,
-  },
+
 ];
 
 const technologies = [
@@ -30,15 +31,15 @@ const technologies = [
   { name: 'Node.js', icon: Globe, color: '#339933' },
   { name: 'MongoDB', icon: Database, color: '#47A248' },
   { name: 'Express', icon: Server, color: '#000000' },
-  { name: 'Three.js', icon: Sparkles, color: '#000000' },
-  { name: 'TypeScript', icon: Code2, color: '#3178C6' },
+  { name: 'Three.js', icon: Cuboid, color: '#000000' },
+  { name: 'Tailwind css', icon: Sparkles, color: '#3178C6' },
 ];
 
 export default function Experience() {
   return (
     <section id="experience" className="min-h-screen py-20 relative px-12">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -74,15 +75,20 @@ export default function Experience() {
                   >
                     {/* Icon */}
                     <motion.div
-                      className="absolute left-0 -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center"
-                      whileHover={{ scale: 1.2, rotate: 360 }}
-                      transition={{ duration: 0.5 }}
+                      className="absolute left-0 -translate-x-1/2 w-10 h-10 
+             bg-gradient-to-br from-purple-600 to-pink-600 
+             rounded-full flex items-center justify-center border border-purple-400/40 shadow-lg"
+                      style={{ transformOrigin: 'center center' }}
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 1.2, ease: 'easeInOut' }}
+                      whileHover={{ scale: 1.5, rotate: 360 }}
                     >
-                      <Icon size={20} />
+                      <Icon size={20} className="text-white" />
                     </motion.div>
 
+
                     {/* Content */}
-                    <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-lg p-6 border border-purple-500/20 backdrop-blur-sm">
+                    <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-lg p-3 sm:p-6 border border-purple-500/20 backdrop-blur-sm">
                       <div className="text-sm text-purple-400 mb-2">{exp.year}</div>
                       <h4 className="text-xl mb-1">{exp.title}</h4>
                       <div className="text-pink-400 mb-3">{exp.company}</div>
@@ -107,8 +113,8 @@ export default function Experience() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ 
-                      scale: 1.1, 
+                    whileHover={{
+                      scale: 1.1,
                       rotate: [0, -10, 10, -10, 0],
                       transition: { duration: 0.5 }
                     }}
@@ -117,10 +123,10 @@ export default function Experience() {
                     <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl p-6 border border-purple-500/20 backdrop-blur-sm flex flex-col items-center justify-center aspect-square">
                       <motion.div
                         className="mb-3"
-                        animate={{ 
+                        animate={{
                           rotateY: [0, 360],
                         }}
-                        transition={{ 
+                        transition={{
                           duration: 3,
                           repeat: Infinity,
                           ease: "linear"
@@ -129,7 +135,7 @@ export default function Experience() {
                         <Icon size={40} className="text-purple-400" />
                       </motion.div>
                       <span className="text-center text-sm text-gray-300">{tech.name}</span>
-                      
+
                       {/* Glow effect on hover */}
                       <motion.div
                         className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
