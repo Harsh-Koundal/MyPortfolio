@@ -98,7 +98,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 flex items-center justify-center gap-2 flex-wrap">
-            © {currentYear} CodeRage Harsh. Made with{' '}
+            © {currentYear} Harsh Koundal. Made with{' '}
             <motion.span
               animate={{
                 scale: [1, 1.2, 1],
@@ -110,7 +110,6 @@ export default function Footer() {
             >
               <Heart className="text-pink-500 fill-pink-500" size={16} />
             </motion.span>
-            and React
           </p>
         </motion.div>
       </div>
