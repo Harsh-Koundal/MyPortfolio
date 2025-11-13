@@ -6,25 +6,28 @@ const experiences = [
     year: '2025',
     title: 'Full Stack MERN Developer',
     company: 'Freelance',
-    description: 'Building modern web applications with React, Node.js, and MongoDB. Focus on creating responsive, performant, and user-friendly experiences.',
+    description:
+      'Working on full-stack projects for clients, building scalable web applications using React, Node.js, Express, and MongoDB. Focused on writing clean code, reusable components, and delivering production-ready solutions.',
     icon: Code2,
   },
   {
-    year: '2024',
-    title: 'Backend Developer',
-    company: 'Digital Agency',
-    description: 'Created RESTful APIs, managed databases, and implemented authentication systems using Node.js and Express.',
+    year: '2024 – 2025',
+    title: 'Frontend Developer Intern',
+    company: 'Printzet',
+    description:
+      'Built responsive UI components, integrated APIs, improved dashboard performance, and worked on animations using Framer Motion and Three.js. Gained strong hands-on experience with React, Tailwind CSS, and state management.',
     icon: Server,
   },
   {
-    year: '2023',
-    title: 'Frontend Developer',
-    company: 'Tech Startup',
-    description: 'Developed interactive UIs using React and implemented complex animations with Three.js and Framer Motion.',
+    year: '2024',
+    title: 'Frontend Development Journey',
+    company: 'Self-Learning',
+    description:
+      'Started learning the fundamentals of web development including HTML, CSS, JavaScript, and React. Built small projects, improved UI/UX understanding, and practiced real-world problem solving.',
     icon: Palette,
   },
-
 ];
+
 
 const technologies = [
   { name: 'React.js', icon: Code2, color: '#61DAFB' },
