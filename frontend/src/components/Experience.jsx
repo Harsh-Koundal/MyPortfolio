@@ -1,29 +1,28 @@
 import { motion } from 'framer-motion';
 import { Code2, Database, Server, Palette, Sparkles, Globe, Cuboid } from 'lucide-react';
-
 const experiences = [
   {
-    year: '2025',
-    title: 'Full Stack MERN Developer',
-    company: 'Freelance',
+    year: 'Jan 2026 – Present',
+    title: 'Software Development Engineer Intern (SDE-I)',
+    company: 'Zenlynx Technology',
     description:
-      'Working on full-stack projects for clients, building scalable web applications using React, Node.js, Express, and MongoDB. Focused on writing clean code, reusable components, and delivering production-ready solutions.',
+      'Managing and maintaining production-grade frontend and backend repositories, reviewing pull requests, resolving merge conflicts, and deploying stable changes to live VPS servers. Contributing across the stack by building React features, developing REST APIs, and ensuring production stability during deployments and post-release verification.',
     icon: Code2,
   },
   {
-    year: '2024 – 2025',
-    title: 'Frontend Developer Intern',
+    year: 'Jul 2025 – Dec 2025',
+    title: 'Software Development Engineer Intern (Full Stack)',
     company: 'Printzet',
     description:
-      'Built responsive UI components, integrated APIs, improved dashboard performance, and worked on animations using Framer Motion and Three.js. Gained strong hands-on experience with React, Tailwind CSS, and state management.',
+      'Developed and maintained backend workflows for a multi-role commerce platform (Admin, Vendor, User). Designed and implemented REST APIs with authentication, validation, and optimized MongoDB queries. Built 20+ reusable React components and improved Lighthouse performance from 60% to 88% through code-splitting, lazy loading, caching, and Tailwind optimization.',
     icon: Server,
   },
   {
-    year: '2024',
-    title: 'Frontend Development Journey',
-    company: 'Self-Learning',
+    year: '2024 – 2025',
+    title: 'Full Stack MERN Developer',
+    company: 'Freelance',
     description:
-      'Started learning the fundamentals of web development including HTML, CSS, JavaScript, and React. Built small projects, improved UI/UX understanding, and practiced real-world problem solving.',
+      'Built and delivered custom full-stack MERN applications including a wholesale e-commerce platform with bulk purchasing, cart management, order lifecycle handling, and payment integration. Owned backend API development, database schema design, and production deployment on VPS servers. Currently open to freelance and contract-based projects.',
     icon: Palette,
   },
 ];
