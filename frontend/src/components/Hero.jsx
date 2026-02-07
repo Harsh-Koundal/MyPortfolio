@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code2, Briefcase } from 'lucide-react';
 import profileImg from '../assets/Harsh-Koundal.jpeg';

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import {motion} from 'framer-motion';
 import { Toaster } from 'sonner';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
