@@ -7,20 +7,50 @@ import { Award, Users, Clock, Target, CheckCircle2, Sparkles, Heart, Code2, Rock
 // import nodeLogo from '../assets/logos/node.svg';
 // etc...
 
-// Placeholder tech stack - replace with your actual logo imports
+// Tech stack with real logos from DevIcons CDN - matching Experience page
 const techStack = [
-  { name: 'React', logo: '⚛️', position: 'top' },
-  { name: 'Node.js', logo: '🟢', position: 'left' },
-  { name: 'MongoDB', logo: '🍃', position: 'right' },
-  { name: 'Express', logo: '⚡', position: 'bottom-left' },
-  { name: 'JavaScript', logo: '📜', position: 'bottom-right' },
-  { name: 'Three.js', logo: '🎨', position: 'center' },
+  { 
+    name: 'React', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    position: 'top',
+    color: 'from-cyan-400 to-blue-500'
+  },
+  { 
+    name: 'Node.js', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    position: 'left',
+    color: 'from-green-500 to-green-600'
+  },
+  { 
+    name: 'MongoDB', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    position: 'right',
+    color: 'from-green-500 to-green-700'
+  },
+  { 
+    name: 'Express', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+    position: 'bottom-left',
+    color: 'from-gray-600 to-gray-700'
+  },
+  { 
+    name: 'JavaScript', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    position: 'bottom-right',
+    color: 'from-yellow-400 to-yellow-500'
+  },
+  { 
+    name: 'Tailwind CSS', 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+    position: 'center',
+    color: 'from-cyan-400 to-blue-500'
+  },
 ];
 
 const stats = [
   { icon: Award, value: '10+', label: 'Projects Completed', color: 'from-purple-500 to-pink-500' },
   { icon: Users, value: '5+', label: 'Happy Clients', color: 'from-purple-400 to-pink-600' },
-  { icon: Clock, value: '4+', label: 'Years Experience', color: 'from-pink-600 to-purple-600' },
+  { icon: Clock, value: '1+', label: 'Years Experience', color: 'from-pink-600 to-purple-600' },
   { icon: Target, value: '100%', label: 'On-Time Delivery', color: 'from-pink-500 to-purple-500' },
 ];
 
@@ -64,7 +94,7 @@ export default function About() {
   );
 
   // Triangle positions for tech stack
-  const getTrianglePosition = (position) => {
+  const getTrianglePosition = (position, index) => {
     const positions = {
       'top': { top: '0%', left: '50%', transform: 'translate(-50%, -50%)' },
       'left': { top: '40%', left: '0%', transform: 'translate(-50%, -50%)' },
@@ -80,7 +110,8 @@ export default function About() {
     <section
       ref={containerRef}
       id="about"
-      className="relative overflow-hidden min-h-screen bg-gradient-to-b from-white via-purple-50/30 to-white py-24"
+      className="relative overflow-hidden min-h-screen py-24"
+      style={{ backgroundColor: '#ffffff' }}
     >
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -124,9 +155,11 @@ export default function About() {
               width: shape.size,
               height: shape.size,
             }}
-            animate={reduceMotion || isMobile ? undefined : {
+            animate={{
               y: [0, -30, 0],
               x: [0, Math.sin(shape.id) * 10, 0],
+              rotate: [0, 180, 360],
+              opacity: [0.03, 0.08, 0.03],
             }}
             transition={{
               duration: shape.duration,
@@ -163,15 +196,15 @@ export default function About() {
         {/* Section Header */}
         <motion.div
           className="text-center mb-20"
-          initial={{ y: 40 }}
-          whileInView={{ y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
             className="inline-flex items-center gap-2 mb-6 px-5 py-2.5 bg-purple-100 border border-purple-300 rounded-full"
-            initial={{ scale: 0.8 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
@@ -184,8 +217,8 @@ export default function About() {
 
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-            initial={{ y: 30 }}
-            whileInView={{ y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
@@ -196,8 +229,8 @@ export default function About() {
 
           <motion.p
             className="text-xl text-gray-600 max-w-2xl mx-auto"
-            initial={{ y: 20 }}
-            whileInView={{ y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
@@ -211,8 +244,8 @@ export default function About() {
           {/* Left - Introduction */}
           <motion.div
             className="space-y-8"
-            initial={{ x: -40 }}
-            whileInView={{ x: 0 }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
@@ -231,7 +264,7 @@ export default function About() {
 
               <div className="space-y-5 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  Hi! I'm <span className="font-semibold text-gray-900">Harsh Koundal</span>, a passionate Full Stack Developer specializing in the MERN stack. I transform ideas into powerful, scalable web applications.
+                  Hi! I'm <span className="font-semibold text-gray-900">Harsh Koundal</span>, a passionate Software Engineer specializing in the MERN stack. I transform ideas into powerful, scalable web applications.
                 </p>
 
                 <p>
@@ -256,8 +289,8 @@ export default function About() {
                   <motion.div
                     key={index}
                     className="bg-white rounded-2xl p-5 shadow-lg shadow-purple-500/5 border border-gray-100"
-                    initial={{ y: 20 }}
-                    whileInView={{ y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.7 + index * 0.1 }}
                     whileHover={{ y: -5, boxShadow: "0 20px 40px -12px rgba(168, 85, 247, 0.1)" }}
@@ -276,8 +309,8 @@ export default function About() {
           {/* Right - Tech Stack Triangle */}
           <motion.div
             className="flex items-center justify-center"
-            initial={{ scale: 0.8 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 1 }}
           >
@@ -318,8 +351,8 @@ export default function About() {
                   key={index}
                   className="absolute"
                   style={getTrianglePosition(tech.position, index)}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
                   onMouseEnter={() => setHoveredTech(index)}
@@ -333,30 +366,31 @@ export default function About() {
                     {/* Icon Container */}
                     <div className="w-20 h-20 bg-white rounded-2xl shadow-xl shadow-purple-500/20 border-2 border-purple-200 flex items-center justify-center relative overflow-hidden">
                       {/* Gradient overlay on hover */}
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 ${hoveredTech === index ? 'opacity-10' : 'opacity-0'}`}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-0"
+                        animate={hoveredTech === index ? { opacity: 0.1 } : { opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                       />
                       
-                      {/* Logo - Replace emoji with actual logo image */}
-                      <span className="text-3xl relative z-10">
-                        {tech.logo}
-                      </span>
-                      {/* For actual logos, use:
-                      <img src={tech.logo} alt={tech.name} className="w-12 h-12 object-contain" />
-                      */}
+                      {/* Logo Image */}
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name}
+                        className="w-12 h-12 object-contain relative z-10"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
                     </div>
 
                     {/* Label */}
-                    {hoveredTech === index && (
-                      <motion.div
-                        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap"
-                        initial={{ y: -5 }}
-                        animate={{ y: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {tech.name}
-                      </motion.div>
-                    )}
+                    <motion.div
+                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap opacity-0"
+                      animate={hoveredTech === index ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {tech.name}
+                    </motion.div>
                   </motion.div>
                 </motion.div>
               ))}
@@ -380,8 +414,8 @@ export default function About() {
         {/* Stats Grid */}
         <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16"
-          initial={{ y: 40 }}
-          whileInView={{ y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
@@ -393,8 +427,8 @@ export default function About() {
               <motion.div
                 key={index}
                 className="relative group"
-                initial={{ y: 30 }}
-                whileInView={{ y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.9 + index * 0.1, duration: 0.6 }}
                 onMouseEnter={() => setHoveredStat(index)}
@@ -439,8 +473,8 @@ export default function About() {
         {/* Bottom CTA */}
         <motion.div
           className="text-center"
-          initial={{ y: 30 }}
-          whileInView={{ y: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 1.3, duration: 0.8 }}
         >
