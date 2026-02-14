@@ -17,7 +17,6 @@ export default function Hero() {
   const springConfig = { stiffness: 50, damping: 20, restDelta: 0.001 };
   const smoothProgress = useSpring(scrollYProgress, springConfig);
 
-  const yHero = useTransform(smoothProgress, [0, 1], [0, -100]);
 
   const scrollToContact = () => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -41,7 +40,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative"
+      className="relative mt-2"
     >
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
         
@@ -125,12 +124,12 @@ export default function Hero() {
         <motion.div
           className="relative h-full flex items-center"
         >
-          <div className="container mx-auto px-6 py-20 relative z-10">
+          <div className="container mx-auto px-6 py-10 relative z-10">
             <div className="max-w-7xl mx-auto">
               
               {/* Top Status Bar */}
               <motion.div
-                className="flex flex-wrap items-center justify-between gap-4 mb-16"
+                className="flex flex-wrap items-center justify-between gap-4 mb-4"
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -175,7 +174,6 @@ export default function Hero() {
                 {/* Text Content - Left Side */}
                 <motion.div
                   className="lg:col-span-7"
-                  style={{ y: yHero }}
                 >
                   <motion.div
                     initial={{ y: 30 }}
@@ -327,14 +325,14 @@ export default function Hero() {
 
                     {/* Floating Stats Cards */}
                     <motion.div
-              className="absolute -top-6 -right-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
+              className=" z-50 absolute -top-6 -right-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
               animate={reduceMotion || isMobile ? undefined : {
                 y: [0, -10, 0],
                 rotate: [0, 3, 0]
               }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 z-50">
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                           <Star className="text-white" size={24} fill="white" />
                         </div>
@@ -346,14 +344,14 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.div
-              className="absolute -bottom-6 -left-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
+              className="z-50 absolute -bottom-6 -left-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
               animate={reduceMotion || isMobile ? undefined : {
                 y: [0, 10, 0],
                 rotate: [0, -3, 0]
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 z-50">
                         <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
                           <Award className="text-white" size={24} />
                         </div>
