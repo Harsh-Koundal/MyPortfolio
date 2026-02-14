@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import { useRef, useState, useMemo } from 'react';
 import { Briefcase, Award, Sparkles, Calendar, Building2 } from 'lucide-react';
 
 // Import actual tech logos - you'll need to add these images to your assets folder
@@ -100,6 +100,9 @@ export default function Experience() {
   const containerRef = useRef(null);
   const [hoveredTech, setHoveredTech] = useState(null);
   const [hoveredExp, setHoveredExp] = useState(null);
+  const reduceMotion = useReducedMotion();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+  const floatingShapeCount = reduceMotion ? 0 : isMobile ? 0 : 8;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -112,14 +115,18 @@ export default function Experience() {
   const y1 = useTransform(smoothProgress, [0, 1], [100, -100]);
 
   // Floating shapes for background
-  const floatingShapes = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    delay: Math.random() * 3,
-    duration: 15 + Math.random() * 10,
-    size: 40 + Math.random() * 60
-  }));
+  const floatingShapes = useMemo(
+    () =>
+      Array.from({ length: floatingShapeCount }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        delay: Math.random() * 3,
+        duration: 20 + Math.random() * 8,
+        size: 24 + Math.random() * 40
+      })),
+    [floatingShapeCount]
+  );
 
   return (
     <section
@@ -172,9 +179,7 @@ export default function Experience() {
             }}
             animate={{
               y: [0, -35, 0],
-              x: [0, Math.sin(shape.id) * 18, 0],
-              rotate: [0, 180, 360],
-              opacity: [0.03, 0.08, 0.03],
+              x: [0, Math.sin(shape.id) * 10, 0],
             }}
             transition={{
               duration: shape.duration,

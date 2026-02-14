@@ -40,7 +40,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative mt-2"
+      className="relative mt-5"
     >
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
         

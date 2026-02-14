@@ -55,15 +55,9 @@ export default function Navbar({ scrolled }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30">
-              <span className="text-white font-bold text-lg">H</span>
-            </div>
-            <div className="hidden sm:block">
               <div className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Harsh Koundal
               </div>
-              <div className="text-xs text-gray-500 -mt-1">Freelance Developer</div>
-            </div>
           </motion.a>
 
           {/* Desktop Menu */}
