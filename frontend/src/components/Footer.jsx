@@ -46,7 +46,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl mb-4 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-              CodeRage Harsh
+              Harsh Koundal
             </h3>
             <p className="text-gray-400">
               Full Stack MERN Developer crafting exceptional digital experiences with passion and precision.

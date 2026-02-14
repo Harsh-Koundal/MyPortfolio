@@ -4,7 +4,7 @@ import { Code2, Database, Server, Palette, Sparkles, Globe, Cuboid, Briefcase, A
 
 const experiences = [
   {
-    year: 'Jan 2026 – Present',
+    year: 'Jan 2024 – Present',
     title: 'Software Development Engineer Intern (SDE-I)',
     company: 'Zenlynx Technology',
     description:
@@ -13,7 +13,7 @@ const experiences = [
     color: 'from-purple-500 to-pink-500',
   },
   {
-    year: 'Jul 2025 – Dec 2025',
+    year: 'Jul 2023 – Dec 2023',
     title: 'Software Development Engineer Intern (Full Stack)',
     company: 'Printzet',
     description:
@@ -22,7 +22,7 @@ const experiences = [
     color: 'from-pink-500 to-purple-500',
   },
   {
-    year: '2024 – 2025',
+    year: '2022 – 2023',
     title: 'Full Stack MERN Developer',
     company: 'Freelance',
     description:

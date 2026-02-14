@@ -20,7 +20,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <>
       <Navbar scrolled={scrolled} />
       <Hero />
       <About />
@@ -29,6 +29,6 @@ export default function App() {
       <Contact />
       <Footer />
       <Toaster position="top-right" theme="dark" />
-    </div>
+    </>
   );
 }

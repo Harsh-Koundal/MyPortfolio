@@ -130,7 +130,7 @@ export default function Contact() {
     <section
       ref={containerRef}
       id="contact"
-      className="relative py-20 overflow-hidden min-h-screen"
+      className="relative py-20"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black" />
