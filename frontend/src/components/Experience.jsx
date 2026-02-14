@@ -8,7 +8,7 @@ import { Briefcase, Award, Sparkles, Calendar, Building2 } from 'lucide-react';
 
 const experiences = [
   {
-    year: 'Jan 2024 – Present',
+    year: 'Jan 2026 – Present',
     title: 'Software Development Engineer Intern (SDE-I)',
     company: 'Zenlynx Technology',
     description:
@@ -16,7 +16,7 @@ const experiences = [
     color: 'from-purple-500 to-pink-500',
   },
   {
-    year: 'Jul 2023 – Dec 2023',
+    year: 'Jul 2025 – Dec 2025',
     title: 'Software Development Engineer Intern (Full Stack)',
     company: 'Printzet',
     description:
@@ -24,7 +24,7 @@ const experiences = [
     color: 'from-pink-500 to-purple-500',
   },
   {
-    year: '2022 – 2023',
+    year: '2024 – 2025',
     title: 'Full Stack MERN Developer',
     company: 'Freelance',
     description:
