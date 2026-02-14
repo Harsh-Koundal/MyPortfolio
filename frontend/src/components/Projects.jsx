@@ -5,77 +5,126 @@ import { ExternalLink, Sparkles, Briefcase, ArrowUpRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: "StudyVault",
+    title: "WoodenJug",
     description:
-      "A smart learning platform where users can upload, organize, and share educational materials securely. Includes real-time document previews, category filters, and user profiles.",
+      "A wholesale e-commerce platform built for bulk product ordering. Includes product management, category-based browsing, smooth checkout flow, and a scalable architecture for business growth.",
     image:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Three.js"],
-    demo: "https://studyvault-2.onrender.com/",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    demo: "https://woodenjug.com/",
     featured: true,
     category: "Full Stack"
   },
   {
     id: 2,
-    title: "NerathiX Digital Agency",
+    title: "Printzet",
     description:
-      "A modern website for a digital agency showcasing services, portfolio, team members, and client testimonials with smooth animations and responsive design.",
+      "A complete print and document management ecosystem. Built both frontend and backend, including order management, document uploads, preview flows, and a delivery partner backend application.",
     image:
-      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
-    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express", "Three.js"],
-    demo: "https://nerathix.onrender.com/",
+      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    demo: "https://www.printzet.com/",
     featured: true,
     category: "Full Stack"
   },
   {
     id: 3,
+    title: "ZenLynx Technology",
+    description:
+      "A corporate website for a technology company showcasing services, products, and enterprise solutions with a clean UI, responsive layout, and performance-focused design.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    demo: "https://zenlynxtechnology.com/",
+    featured: true,
+    category: "Frontend"
+  },
+  {
+    id: 4,
+    title: "BIG ESG Platform",
+    description:
+      "A large-scale ESG (Environmental, Social, Governance) platform built to manage sustainability data, reporting workflows, and enterprise-level compliance solutions.",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+    demo: "https://bigesg.zenlynxtechnology.com/",
+    featured: true,
+    category: "Full Stack"
+  },
+  {
+    id: 5,
+    title: "The Jhund",
+    description:
+      "A modern brand website designed to highlight identity, storytelling, and engagement through smooth animations and a responsive user experience.",
+    image:
+      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    demo: "https://thejhund.com/",
+    featured: false,
+    category: "Frontend"
+  },
+  {
+    id: 6,
+    title: "StudyVault",
+    description:
+      "A smart learning platform where users can upload, organize, and share educational materials securely with real-time document previews and category-based filters.",
+    image:
+      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1080",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Three.js"],
+    demo: "https://studyvault-2.onrender.com/",
+    featured: false,
+    category: "Full Stack"
+  },
+  {
+    id: 7,
+    title: "NerathiX Digital Agency",
+    description:
+      "A modern digital agency website showcasing services, portfolio, team members, and client testimonials with smooth animations and responsive design.",
+    image:
+      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=2070",
+    tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express", "Three.js"],
+    demo: "https://nerathix.onrender.com/",
+    featured: false,
+    category: "Full Stack"
+  },
+  {
+    id: 8,
     title: "Voting System",
     description:
-      "A secure online voting platform allowing users to cast votes, view live results, and prevent duplicate submissions using authentication and database validation.",
+      "A secure online voting platform that allows users to cast votes, view live results, and prevents duplicate submissions using authentication and database validation.",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1080",
     tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express"],
     demo: "https://voting-system-demo.com",
     featured: false,
     category: "Web App"
   },
   {
-    id: 4,
+    id: 9,
     title: "Recipe Finder",
     description:
-      "A web app that helps users discover recipes based on ingredients they have. Includes API integration, filtering by cuisine, and responsive card-based design.",
+      "A web app that helps users discover recipes based on available ingredients with API integration, cuisine filters, and responsive card-based UI.",
     image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1080",
     tech: ["React", "API Integration", "CSS3", "JavaScript"],
-    demo: "https://recipe-finder-demo.com",
+    demo: "https://harsh-koundal.github.io/-Recipe-App/",
     featured: false,
     category: "Frontend"
   },
   {
-    id: 5,
+    id: 10,
     title: "Expense Tracker",
     description:
-      "A smart budgeting tool that tracks daily expenses, visualizes spending trends, and helps manage finances efficiently with local storage support.",
+      "A budgeting tool that tracks daily expenses, visualizes spending patterns, and helps users manage finances efficiently using local storage.",
     image:
-      "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1174",
+      "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?auto=format&fit=crop&q=80&w=1174",
     tech: ["React", "Chart.js", "Local Storage", "CSS Modules"],
     demo: "https://expense-tracker-demo.com",
     featured: false,
     category: "Web App"
-  },
-  {
-    id: 6,
-    title: "Portfolio Project",
-    description:
-      "A stunning portfolio website showcasing creative work with advanced animations, smooth transitions, and an intuitive user interface built with modern technologies.",
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tech: ["React", "Framer Motion", "Tailwind CSS", "Three.js"],
-    demo: "https://portfolio-demo.com",
-    featured: false,
-    category: "Frontend"
-  },
+  }
 ];
+
 
 export default function Projects() {
   const containerRef = useRef(null);
