@@ -13,22 +13,26 @@ export default function Navbar({ scrolled }) {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const smoothScrollWithOffset = (href) => {
+    const element = document.querySelector(href);
+    if (!element) return;
+
+    const nav = document.querySelector('nav');
+    const offset = nav ? nav.offsetHeight + 8 : 80;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   const scrollToSection = (e, href) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
+    smoothScrollWithOffset(href);
+    setMobileMenuOpen(false);
   };
 
   const scrollToContact = (e) => {
     e.preventDefault();
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
+    smoothScrollWithOffset('#contact');
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -70,8 +74,8 @@ export default function Navbar({ scrolled }) {
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
                 className="relative px-4 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
@@ -105,9 +109,9 @@ export default function Navbar({ scrolled }) {
               {mobileMenuOpen ? (
                 <motion.div
                   key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
+                  initial={{ rotate: -90 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: 90 }}
                   transition={{ duration: 0.2 }}
                 >
                   <X size={24} />
@@ -115,9 +119,9 @@ export default function Navbar({ scrolled }) {
               ) : (
                 <motion.div
                   key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
+                  initial={{ rotate: 90 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: -90 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Menu size={24} />
@@ -131,9 +135,9 @@ export default function Navbar({ scrolled }) {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ height: 0 }}
+              animate={{ height: 'auto' }}
+              exit={{ height: 0 }}
               transition={{ duration: 0.3 }}
               className="lg:hidden overflow-hidden"
             >
@@ -144,8 +148,8 @@ export default function Navbar({ scrolled }) {
                     href={item.href}
                     onClick={(e) => scrollToSection(e, item.href)}
                     className="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors font-medium"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ x: -20 }}
+                    animate={{ x: 0 }}
                     transition={{ delay: index * 0.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -157,8 +161,8 @@ export default function Navbar({ scrolled }) {
                 <motion.button
                   onClick={scrollToContact}
                   className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold shadow-lg shadow-purple-500/30"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ y: 10 }}
+                  animate={{ y: 0 }}
                   transition={{ delay: navItems.length * 0.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
