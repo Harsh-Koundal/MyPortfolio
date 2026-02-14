@@ -111,7 +111,7 @@ export default function Projects() {
   return (
     <section
       ref={containerRef}
-      id="portfolio"
+      id="projects"
       className="relative py-24 overflow-hidden min-h-screen"
       style={{ backgroundColor: '#ffffff' }}
     >
