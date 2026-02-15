@@ -191,7 +191,7 @@ export default function About() {
 
       {/* Content */}
       <motion.div
-        className="container mx-auto px-6 relative z-10"
+        className="mx-auto px-6 relative z-10"
       >
         {/* Section Header */}
         <motion.div
@@ -228,7 +228,7 @@ export default function About() {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-8xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -239,7 +239,7 @@ export default function About() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 max-w-8xl mx-auto mb-20">
           
           {/* Left - Introduction */}
           <motion.div
@@ -314,7 +314,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 1 }}
           >
-            <div className="relative w-full max-w-md aspect-square">
+            <div className="relative w-full max-w-8xl aspect-square">
               
               {/* Triangle Background */}
               <motion.div

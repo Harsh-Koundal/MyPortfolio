@@ -124,8 +124,8 @@ export default function Hero() {
         <motion.div
           className="relative h-full flex items-center"
         >
-          <div className="container mx-auto px-6 py-10 relative z-10">
-            <div className="max-w-7xl mx-auto">
+          <div className="mx-auto px-6 py-10 relative z-10">
+            <div className="max-w-8xl mx-auto">
               
               {/* Top Status Bar */}
               <motion.div
@@ -216,7 +216,7 @@ export default function Hero() {
 
                     {/* Description */}
                     <motion.p
-                      className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed"
+                      className="text-lg md:text-xl text-gray-600 mb-10 max-w-8xl leading-relaxed"
                       initial={{ y: 30 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 0.8, duration: 0.8 }}

@@ -202,7 +202,7 @@ export default function Contact() {
       </div>
 
       {/* Content */}
-      <motion.div className="container mx-auto px-6 relative z-10">
+      <motion.div className="mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           className="text-center mb-20"
@@ -238,7 +238,7 @@ export default function Contact() {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-8xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -258,7 +258,7 @@ export default function Contact() {
 
         {/* Contact Info Cards */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-16 max-w-4xl mx-auto"
+          className="flex flex-wrap justify-center gap-4 mb-16 max-w-8xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -287,7 +287,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Main Grid */}
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div className="max-w-8xl mx-auto grid lg:grid-cols-2 gap-12">
           
           {/* Contact Form */}
           <motion.div

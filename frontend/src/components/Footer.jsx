@@ -57,7 +57,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="container mx-auto px-6 py-16">
+      <div className="mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           
           {/* Brand Section */}
@@ -73,7 +73,7 @@ export default function Footer() {
             >
               Harsh Koundal
             </motion.h3>
-            <p className="text-gray-600 text-lg mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-600 text-lg mb-6 max-w-8xl leading-relaxed">
               Full Stack Developer specializing in MERN stack. Crafting exceptional digital experiences with passion and precision.
             </p>
             
@@ -148,6 +148,7 @@ export default function Footer() {
               >
                 aharsh3039@gmail.com
               </a>
+              <tel className="text-gray-600">+91 9736054697</tel>
               <p className="text-gray-600">Kangra, Himachal Pradesh</p>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full text-sm font-medium text-green-700 mt-4">
                 <span className="relative flex h-2 w-2">

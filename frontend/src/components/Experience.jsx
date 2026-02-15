@@ -210,7 +210,7 @@ export default function Experience() {
       </div>
 
       {/* Content */}
-      <motion.div className="container mx-auto px-6 relative z-10">
+      <motion.div className="mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           className="text-center mb-20"
@@ -246,7 +246,7 @@ export default function Experience() {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-8xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -265,7 +265,7 @@ export default function Experience() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 max-w-8xl mx-auto mb-20">
           
           {/* Timeline Section */}
           <div>

@@ -240,7 +240,7 @@ export default function Projects() {
 
       {/* Content */}
       <motion.div
-        className="container mx-auto px-6 relative z-10"
+        className="mx-auto px-6 relative z-10"
       >
         {/* Section Header */}
         <motion.div
@@ -277,7 +277,7 @@ export default function Projects() {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-8xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -296,7 +296,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

@@ -45,7 +45,7 @@ export default function Navbar({ scrolled }) {
           : 'bg-white/80 backdrop-blur-md'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.a
