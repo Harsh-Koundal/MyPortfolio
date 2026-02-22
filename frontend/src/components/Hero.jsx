@@ -1,21 +1,22 @@
-import { useRef, useMemo } from 'react';
-import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
+import { useRef, useMemo, useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Star, Award, Coffee, CheckCircle2, Sparkles } from 'lucide-react';
 import profileImg from '../assets/Harsh-Koundal.jpeg';
 
 export default function Hero() {
   const containerRef = useRef(null);
   const reduceMotion = useReducedMotion();
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 1024);
+    onResize();
+    window.addEventListener('resize', onResize);
+
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   const floatingShapeCount = reduceMotion ? 0 : isMobile ? 0 : 8;
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const springConfig = { stiffness: 50, damping: 20, restDelta: 0.001 };
-  const smoothProgress = useSpring(scrollYProgress, springConfig);
 
 
   const scrollToContact = () => {
@@ -42,7 +43,7 @@ export default function Hero() {
       id="home"
       className="relative mt-5"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-white">
+      <div className="bg-white lg:sticky lg:top-0 lg:h-screen overflow-visible lg:overflow-hidden">
         
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -122,14 +123,14 @@ export default function Hero() {
 
         {/* Main Content */}
         <motion.div
-          className="relative h-full flex items-center"
+          className="relative flex items-center lg:h-full"
         >
-          <div className="mx-auto px-6 py-10 relative z-10">
+          <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 py-8 sm:py-10 lg:py-12 relative z-10">
             <div className="max-w-8xl mx-auto">
               
               {/* Top Status Bar */}
               <motion.div
-                className="flex flex-wrap items-center justify-between gap-4 mb-4"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6"
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -145,7 +146,7 @@ export default function Hero() {
                   <span className="text-sm font-semibold text-green-700">Available for Projects</span>
                 </motion.div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 self-start sm:self-auto">
                   {[
                     { icon: Github, href: 'https://github.com/Harsh-Koundal', label: 'GitHub' },
                     { icon: Linkedin, href: 'https://www.linkedin.com/in/harsh-koundal-0a7485369/', label: 'LinkedIn' },
@@ -169,7 +170,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Grid */}
-              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="grid lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-center">
                 
                 {/* Text Content - Left Side */}
                 <motion.div
@@ -193,7 +194,7 @@ export default function Hero() {
 
                     {/* Main Heading */}
                     <motion.h1
-                      className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]"
+                      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-6 leading-[1.1]"
                       initial={{ y: 30 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 0.4, duration: 0.8 }}
@@ -206,7 +207,7 @@ export default function Hero() {
 
                     {/* Subtitle */}
                     <motion.p
-                      className="text-2xl md:text-3xl font-semibold text-gray-700 mb-6"
+                      className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-5 sm:mb-6"
                       initial={{ y: 30 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 0.6, duration: 0.8 }}
@@ -216,7 +217,7 @@ export default function Hero() {
 
                     {/* Description */}
                     <motion.p
-                      className="text-lg md:text-xl text-gray-600 mb-10 max-w-8xl leading-relaxed"
+                      className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-3xl leading-relaxed"
                       initial={{ y: 30 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 0.8, duration: 0.8 }}
@@ -228,19 +229,19 @@ export default function Hero() {
 
                     {/* Feature Pills */}
                     <motion.div
-                      className="flex flex-wrap gap-3 mb-10"
+                      className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10"
                       initial={{ y: 20 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 1, duration: 0.6 }}
                     >
                       {[
                         { icon: CheckCircle2, text: 'Full Stack Development' },
-                        { icon: Award, text: '4+ Years Experience' },
+                        { icon: Award, text: '1+ Years Experience' },
                         { icon: Coffee, text: 'Remote Friendly' }
                       ].map((item, i) => (
                         <motion.div
                           key={i}
-                          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full"
+                          className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full"
                           whileHover={{ scale: 1.05, borderColor: 'rgb(168, 85, 247)' }}
                           initial={{ scale: 0.8 }}
                           animate={{ scale: 1 }}
@@ -254,14 +255,14 @@ export default function Hero() {
 
                     {/* CTA Buttons */}
                     <motion.div
-                      className="flex flex-wrap gap-4"
+                      className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                       initial={{ y: 30 }}
                       animate={{ y: 0 }}
                       transition={{ delay: 1.2, duration: 0.8 }}
                     >
                       <motion.button
                         onClick={scrollToContact}
-                        className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg overflow-hidden shadow-lg shadow-purple-500/30"
+                        className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-base sm:text-lg overflow-hidden shadow-lg shadow-purple-500/30"
                         whileHover={{ 
                           scale: 1.05, 
                           boxShadow: "0 20px 40px -12px rgba(168, 85, 247, 0.4)" 
@@ -282,7 +283,7 @@ export default function Hero() {
 
                       <motion.a
                         href="#portfolio"
-                        className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold text-lg hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 transition-all"
+                        className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold text-base sm:text-lg hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 transition-all"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -294,7 +295,7 @@ export default function Hero() {
 
                 {/* Photo Section - Right Side */}
                 <motion.div
-                  className="lg:col-span-5"
+                  className="lg:col-span-5 max-w-sm sm:max-w-md lg:max-w-none mx-auto w-full"
                   initial={{ scale: 0.8, x: 50 }}
                   animate={{ scale: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -325,7 +326,7 @@ export default function Hero() {
 
                     {/* Floating Stats Cards */}
                     <motion.div
-              className=" z-50 absolute -top-6 -right-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
+              className="hidden sm:block z-50 absolute -top-6 -right-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
               animate={reduceMotion || isMobile ? undefined : {
                 y: [0, -10, 0],
                 rotate: [0, 3, 0]
@@ -344,7 +345,7 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.div
-              className="z-50 absolute -bottom-6 -left-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
+              className="hidden sm:block z-50 absolute -bottom-6 -left-6 bg-white rounded-2xl px-6 py-4 shadow-xl shadow-purple-500/20 border border-purple-100"
               animate={reduceMotion || isMobile ? undefined : {
                 y: [0, 10, 0],
                 rotate: [0, -3, 0]
@@ -364,14 +365,14 @@ export default function Hero() {
 
                     {/* Decorative dots */}
                     <motion.div
-                      className="absolute top-1/4 -left-8 w-4 h-4 bg-purple-400 rounded-full"
+                      className="hidden sm:block absolute top-1/4 -left-8 w-4 h-4 bg-purple-400 rounded-full"
                       animate={reduceMotion || isMobile ? undefined : {
                         scale: [1, 1.5, 1],
                       }}
                       transition={{ duration: 3, repeat: Infinity }}
                     />
                     <motion.div
-                      className="absolute bottom-1/4 -right-4 w-6 h-6 bg-pink-400 rounded-full"
+                      className="hidden sm:block absolute bottom-1/4 -right-4 w-6 h-6 bg-pink-400 rounded-full"
                       animate={reduceMotion || isMobile ? undefined : {
                         scale: [1, 1.5, 1],
                       }}
