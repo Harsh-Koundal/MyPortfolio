@@ -282,7 +282,7 @@ export default function Hero() {
                       </motion.button>
 
                       <motion.a
-                        href="#portfolio"
+                        href="#projects"
                         className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold text-base sm:text-lg hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 transition-all"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
