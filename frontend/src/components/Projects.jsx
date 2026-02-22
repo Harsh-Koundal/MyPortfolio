@@ -1,6 +1,14 @@
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { useRef, useState, useMemo } from 'react';
 import { ExternalLink, Sparkles, Briefcase, ArrowUpRight } from 'lucide-react';
+import woodenjugImg from "../assets/woodenjug.png";
+import printzetImg from "../assets/printzet.png";
+import zenlynxImg from "../assets/zenlynx.png";
+import bigesgImg from "../assets/bigesg.png";
+import thejhundImg from "../assets/jhund.png";
+import studyvaultImg from "../assets/studyvault.png";
+import nerathixImg from "../assets/nerathix.png";
+import aifinityImg from "../assets/aifinity.png";
 
 const projects = [
   {
@@ -8,11 +16,9 @@ const projects = [
     title: "WoodenJug",
     description:
       "A wholesale e-commerce platform built for bulk product ordering. Includes product management, category-based browsing, smooth checkout flow, and a scalable architecture for business growth.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1080",
+    image: woodenjugImg,
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     demo: "https://woodenjug.com/",
-    featured: true,
     category: "Full Stack"
   },
   {
@@ -20,11 +26,9 @@ const projects = [
     title: "Printzet",
     description:
       "A complete print and document management ecosystem. Built both frontend and backend, including order management, document uploads, preview flows, and a delivery partner backend application.",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1080",
+    image: printzetImg,
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     demo: "https://www.printzet.com/",
-    featured: true,
     category: "Full Stack"
   },
   {
@@ -32,11 +36,9 @@ const projects = [
     title: "ZenLynx Technology",
     description:
       "A corporate website for a technology company showcasing services, products, and enterprise solutions with a clean UI, responsive layout, and performance-focused design.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1080",
+    image: zenlynxImg,
     tech: ["React", "Tailwind CSS", "JavaScript"],
     demo: "https://zenlynxtechnology.com/",
-    featured: true,
     category: "Frontend"
   },
   {
@@ -44,11 +46,9 @@ const projects = [
     title: "BIG ESG Platform",
     description:
       "A large-scale ESG (Environmental, Social, Governance) platform built to manage sustainability data, reporting workflows, and enterprise-level compliance solutions.",
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1080",
+    image: bigesgImg,
     tech: ["React", "Node.js", "MongoDB", "Express"],
     demo: "https://bigesg.zenlynxtechnology.com/",
-    featured: true,
     category: "Full Stack"
   },
   {
@@ -56,11 +56,9 @@ const projects = [
     title: "The Jhund",
     description:
       "A modern brand website designed to highlight identity, storytelling, and engagement through smooth animations and a responsive user experience.",
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=1080",
+    image: thejhundImg,
     tech: ["React", "Tailwind CSS", "JavaScript"],
     demo: "https://thejhund.com/",
-    featured: false,
     category: "Frontend"
   },
   {
@@ -68,11 +66,9 @@ const projects = [
     title: "StudyVault",
     description:
       "A smart learning platform where users can upload, organize, and share educational materials securely with real-time document previews and category-based filters.",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1080",
+    image: studyvaultImg,
     tech: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Three.js"],
     demo: "https://studyvault-2.onrender.com/",
-    featured: false,
     category: "Full Stack"
   },
   {
@@ -80,11 +76,9 @@ const projects = [
     title: "NerathiX Digital Agency",
     description:
       "A modern digital agency website showcasing services, portfolio, team members, and client testimonials with smooth animations and responsive design.",
-    image:
-      "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=2070",
+    image: nerathixImg,
     tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express", "Three.js"],
     demo: "https://nerathix.onrender.com/",
-    featured: false,
     category: "Full Stack"
   },
   {
@@ -96,7 +90,6 @@ const projects = [
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1080",
     tech: ["React", "Node.js", "Tailwind CSS", "MongoDB", "Express"],
     demo: "https://voting-system-demo.com",
-    featured: false,
     category: "Web App"
   },
   {
@@ -108,7 +101,6 @@ const projects = [
       "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1080",
     tech: ["React", "API Integration", "CSS3", "JavaScript"],
     demo: "https://harsh-koundal.github.io/-Recipe-App/",
-    featured: false,
     category: "Frontend"
   },
   {
@@ -120,9 +112,18 @@ const projects = [
       "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?auto=format&fit=crop&q=80&w=1174",
     tech: ["React", "Chart.js", "Local Storage", "CSS Modules"],
     demo: "https://expense-tracker-demo.com",
-    featured: false,
     category: "Web App"
-  }
+  },
+  {
+    id: 11,
+    title: "Aifinity",
+    description:
+      "A modern digital way to learn and explore AI concepts through interactive lessons, real-time code execution, and a vibrant community forum for discussions and support.",
+    image: aifinityImg,
+    tech: ["TypeScript", "Node.js", "Tailwind CSS", "SQL", "Express"],
+    demo: "https://www.aifinityacademy.com/",
+    category: "Full Stack"
+  },
 ];
 
 
@@ -409,7 +410,7 @@ export default function Projects() {
                       whileTap={{ scale: 0.98 }}
                     >
                       <span className="relative z-10 flex items-center gap-2">
-                        View Project
+                        View
                         <motion.div
                           animate={hoveredId === project.id ? { x: [0, 4, 0] } : {}}
                           transition={{ duration: 0.5, repeat: Infinity }}
